@@ -1,21 +1,17 @@
 <p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Name:</strong>
-  <%= @task.name %>
-</p>
-
-<p>
-  <strong>Time Spent:</strong>
-  <%= @task.time_spent %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @task.description %>
-</p>
-
-<p>Created on: <%= @task.created_at.to_formatted_s(:long_ordinal) %></p>
+<table>
+  <tr>
+  <th>Name:</th>
+  <th>Time Spent:</th>
+  <th>Description:</th>
+</tr>
+<tr>
+  <td><%= @task.name %></td>
+  <td><%= @task.time_spent %></td>
+  <td><%= @task.description %></td>
+  <td>Created on: <%= @task.created_at.to_formatted_s(:long_ordinal) %></td>
+</tr>
+</table>
 
 <%= link_to 'Edit', edit_task_path(@task) %> |
 <%= link_to 'Back', tasks_path %>
