@@ -1,17 +1,26 @@
 <p id="notice"><%= notice %></p>
+
+<h1>Look at What You've Done!</h1>
+
+
 <table>
+  <thead>
   <tr>
-  <th>Name:</th>
-  <th>Time Spent:</th>
-  <th>Description:</th>
+  <th>Task</th>
+  <th>Time</th>
+  <th>Description</th>
 </tr>
+</thead>
+
+<tbody>
 <tr>
   <td><%= @task.name %></td>
-  <td><%= @task.time_spent %></td>
+  <td><%= @task.time_spent %> hour(s)</td>
   <td><%= @task.description %></td>
-  <td>Created on: <%= @task.created_at.to_formatted_s(:long_ordinal) %></td>
 </tr>
+</tbody>
 </table>
-
-<%= link_to 'Edit', edit_task_path(@task) %> |
-<%= link_to 'Back', tasks_path %>
+Created on: <%= @task.created_at.to_formatted_s(:long_ordinal) %>
+<br>
+<br><%= link_to 'Edit', edit_task_path(@task) %> |
+<%= link_to 'Back', complete_task_path %>
