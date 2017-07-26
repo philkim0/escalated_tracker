@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <p>Recently Completed Tasks</p>
 
 <table>
@@ -14,7 +16,7 @@
     <% @tasks.each do |task| %>
       <tr>
         <td><%= task.name %></td>
-        <td><%= task.time_spent %></td>
+        <td><%= task.time_spent %> hour(s)</td>
         <td><%= task.description %></td>
         <td><%= link_to 'Show', task %></td>
         <td><%= link_to 'Edit', edit_task_path(task) %></td>
@@ -23,3 +25,5 @@
     <% end %>
   </tbody>
 </table>
+
+<%= link_to 'Back', tasks_path %>

@@ -13,12 +13,13 @@
 
   <div class="field">
     <%= f.label :name %>
-    <%= f.text_field :name %>
+    <%#= f.text_field :name %>
+    <%= f.select :name, ['Slack Goalie', 'Projects', 'Meeting', 'Professional Development', 'Training and Mentoring'] %>
   </div>
 
   <div class="field">
     <%= f.label :time_spent %>
-    <%= f.text_field :time_spent %>
+    <%= f.text_field :time_spent %> hour(s)
   </div>
 
   <div class="field">

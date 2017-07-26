@@ -1,11 +1,9 @@
 class TasksController < ApplicationController
-# before_action :set_task, only: [:show, :edit, :update, :destroy]
-before_action :set_task, except: [:complete]
+before_action :set_task, only: [:show, :edit, :update, :destroy]
 
   # GET /tasks
   # GET /tasks.json
   def index
-    @tasks = Task.all
   end
 
   # GET /tasks/1
@@ -14,6 +12,7 @@ before_action :set_task, except: [:complete]
   end
 
   def complete
+    @tasks = Task.last(5)
   end
 
   # GET /tasks/new
